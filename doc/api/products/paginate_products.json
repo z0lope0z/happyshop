@@ -1,0 +1,99 @@
+{
+  "resource": "Products",
+  "resource_explanation": null,
+  "http_method": "GET",
+  "route": "/products",
+  "description": "Paginate products",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "filter[id]",
+      "description": "Get product by ID"
+    },
+    {
+      "name": "filter[category]",
+      "description": "Filter by category or price"
+    },
+    {
+      "name": "sort",
+      "description": "Sort by price"
+    },
+    {
+      "name": "page[number]",
+      "description": "Page number"
+    },
+    {
+      "name": "page[size]",
+      "description": "Items in a given page"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/products",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\"data\":[{\"id\":\"1\",\"type\":\"products\",\"links\":{\"self\":\"http://example.org/products/1\"},\"attributes\":{\"name\":\"water\",\"sold-out\":null,\"category\":\"water\",\"under-sale\":null,\"price\":200,\"sale-price\":null}},{\"id\":\"2\",\"type\":\"products\",\"links\":{\"self\":\"http://example.org/products/2\"},\"attributes\":{\"name\":\"orange juice\",\"sold-out\":null,\"category\":\"juice\",\"under-sale\":null,\"price\":100,\"sale-price\":null}},{\"id\":\"3\",\"type\":\"products\",\"links\":{\"self\":\"http://example.org/products/3\"},\"attributes\":{\"name\":\"grape juice\",\"sold-out\":null,\"category\":\"juice\",\"under-sale\":null,\"price\":300,\"sale-price\":null}}],\"links\":{\"first\":\"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=10\",\"last\":\"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=10\"}}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/vnd.api+json",
+        "ETag": "W/\"e7ffa1f4da9889962768ba860e27ce6a\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "c8eed7e5-6372-43a3-bd33-a40d8a4b90f7",
+        "X-Runtime": "0.008860",
+        "Content-Length": "755"
+      },
+      "response_content_type": "application/vnd.api+json",
+      "curl": "curl \"happyshop.lopeemano.com/products\" -X GET \\\n\t-H \"Accept: application/vnd.api+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    },
+    {
+      "request_method": "GET",
+      "request_path": "/products?page%5Bnumber%5D=2&page%5Bsize%5D=1",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.api+json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "page": {
+          "number": "2",
+          "size": "1"
+        }
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\"data\":[{\"id\":\"2\",\"type\":\"products\",\"links\":{\"self\":\"http://example.org/products/2\"},\"attributes\":{\"name\":\"orange juice\",\"sold-out\":null,\"category\":\"juice\",\"under-sale\":null,\"price\":100,\"sale-price\":null}}],\"links\":{\"first\":\"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=1\",\"prev\":\"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=1\",\"next\":\"http://example.org/products?page%5Bnumber%5D=3&page%5Bsize%5D=1\",\"last\":\"http://example.org/products?page%5Bnumber%5D=3&page%5Bsize%5D=1\"}}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/vnd.api+json",
+        "ETag": "W/\"681e5bde27bedd6705eb6f2886324624\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "20d2592b-77c4-47d2-a408-c346e17ed1a7",
+        "X-Runtime": "0.005838",
+        "Content-Length": "511"
+      },
+      "response_content_type": "application/vnd.api+json",
+      "curl": "curl \"happyshop.lopeemano.com/products?page%5Bnumber%5D=2&page%5Bsize%5D=1\" -X GET \\\n\t-H \"Accept: application/vnd.api+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

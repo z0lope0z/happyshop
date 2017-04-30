@@ -1,0 +1,38 @@
+{
+  "resources": [
+    {
+      "name": "Products",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Filter by category and sort price in descending order",
+          "link": "products/filter_by_category_and_sort_price_in_descending_order.json",
+          "groups": "all",
+          "route": "/products",
+          "method": "get"
+        },
+        {
+          "description": "Getting a list of products",
+          "link": "products/getting_a_list_of_products.json",
+          "groups": "all",
+          "route": "/products",
+          "method": "get"
+        },
+        {
+          "description": "Getting a single product",
+          "link": "products/getting_a_single_product.json",
+          "groups": "all",
+          "route": "/products",
+          "method": "get"
+        },
+        {
+          "description": "Paginate products",
+          "link": "products/paginate_products.json",
+          "groups": "all",
+          "route": "/products",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}

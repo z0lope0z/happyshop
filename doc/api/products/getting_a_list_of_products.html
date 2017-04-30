@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Products API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Products API</h1>
+
+      <div class="article">
+        <h2>Getting a list of products</h2>
+        <h3>GET /products</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">filter[id]</span>
+                </td>
+                <td>
+                  <span class="description">Get product by ID</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">filter[category]</span>
+                </td>
+                <td>
+                  <span class="description">Filter by category or price</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sort</span>
+                </td>
+                <td>
+                  <span class="description">Sort by price</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">page[number]</span>
+                </td>
+                <td>
+                  <span class="description">Page number</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">page[size]</span>
+                </td>
+                <td>
+                  <span class="description">Items in a given page</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Accept: application/vnd.api+json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /products</pre>
+
+
+
+            <h4>cURL</h4>
+            <pre class="request curl">curl &quot;happyshop.lopeemano.com/products&quot; -X GET \
+	-H &quot;Accept: application/vnd.api+json&quot; \
+	-H &quot;Content-Type: application/json&quot; \
+	-H &quot;Host: example.org&quot; \
+	-H &quot;Cookie: &quot;</pre>
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Content-Type: application/vnd.api+json
+ETag: W/&quot;e7ffa1f4da9889962768ba860e27ce6a&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: a52215d2-ab27-48e9-83b5-1e958a5b17a5
+X-Runtime: 0.007057
+Content-Length: 755</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{&quot;data&quot;:[{&quot;id&quot;:&quot;1&quot;,&quot;type&quot;:&quot;products&quot;,&quot;links&quot;:{&quot;self&quot;:&quot;http://example.org/products/1&quot;},&quot;attributes&quot;:{&quot;name&quot;:&quot;water&quot;,&quot;sold-out&quot;:null,&quot;category&quot;:&quot;water&quot;,&quot;under-sale&quot;:null,&quot;price&quot;:200,&quot;sale-price&quot;:null}},{&quot;id&quot;:&quot;2&quot;,&quot;type&quot;:&quot;products&quot;,&quot;links&quot;:{&quot;self&quot;:&quot;http://example.org/products/2&quot;},&quot;attributes&quot;:{&quot;name&quot;:&quot;orange juice&quot;,&quot;sold-out&quot;:null,&quot;category&quot;:&quot;juice&quot;,&quot;under-sale&quot;:null,&quot;price&quot;:100,&quot;sale-price&quot;:null}},{&quot;id&quot;:&quot;3&quot;,&quot;type&quot;:&quot;products&quot;,&quot;links&quot;:{&quot;self&quot;:&quot;http://example.org/products/3&quot;},&quot;attributes&quot;:{&quot;name&quot;:&quot;grape juice&quot;,&quot;sold-out&quot;:null,&quot;category&quot;:&quot;juice&quot;,&quot;under-sale&quot;:null,&quot;price&quot;:300,&quot;sale-price&quot;:null}}],&quot;links&quot;:{&quot;first&quot;:&quot;http://example.org/products?page%5Bnumber%5D=1&amp;page%5Bsize%5D=10&quot;,&quot;last&quot;:&quot;http://example.org/products?page%5Bnumber%5D=1&amp;page%5Bsize%5D=10&quot;}}</pre>
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Accept: application/vnd.api+json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /products</pre>
+
+
+
+            <h4>cURL</h4>
+            <pre class="request curl">curl &quot;happyshop.lopeemano.com/products&quot; -X GET \
+	-H &quot;Accept: application/vnd.api+json&quot; \
+	-H &quot;Content-Type: application/json&quot; \
+	-H &quot;Host: example.org&quot; \
+	-H &quot;Cookie: &quot;</pre>
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Content-Type: application/vnd.api+json
+ETag: W/&quot;e7ffa1f4da9889962768ba860e27ce6a&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 26301723-16d5-4fb1-a7a6-e420f9af89fb
+X-Runtime: 0.005114
+Content-Length: 755</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{&quot;data&quot;:[{&quot;id&quot;:&quot;1&quot;,&quot;type&quot;:&quot;products&quot;,&quot;links&quot;:{&quot;self&quot;:&quot;http://example.org/products/1&quot;},&quot;attributes&quot;:{&quot;name&quot;:&quot;water&quot;,&quot;sold-out&quot;:null,&quot;category&quot;:&quot;water&quot;,&quot;under-sale&quot;:null,&quot;price&quot;:200,&quot;sale-price&quot;:null}},{&quot;id&quot;:&quot;2&quot;,&quot;type&quot;:&quot;products&quot;,&quot;links&quot;:{&quot;self&quot;:&quot;http://example.org/products/2&quot;},&quot;attributes&quot;:{&quot;name&quot;:&quot;orange juice&quot;,&quot;sold-out&quot;:null,&quot;category&quot;:&quot;juice&quot;,&quot;under-sale&quot;:null,&quot;price&quot;:100,&quot;sale-price&quot;:null}},{&quot;id&quot;:&quot;3&quot;,&quot;type&quot;:&quot;products&quot;,&quot;links&quot;:{&quot;self&quot;:&quot;http://example.org/products/3&quot;},&quot;attributes&quot;:{&quot;name&quot;:&quot;grape juice&quot;,&quot;sold-out&quot;:null,&quot;category&quot;:&quot;juice&quot;,&quot;under-sale&quot;:null,&quot;price&quot;:300,&quot;sale-price&quot;:null}}],&quot;links&quot;:{&quot;first&quot;:&quot;http://example.org/products?page%5Bnumber%5D=1&amp;page%5Bsize%5D=10&quot;,&quot;last&quot;:&quot;http://example.org/products?page%5Bnumber%5D=1&amp;page%5Bsize%5D=10&quot;}}</pre>
+      </div>
+    </div>
+  </body>
+</html>

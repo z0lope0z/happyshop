@@ -1,0 +1,217 @@
+Getting a single product
+------------------------
+
+Parameters:
+  * filter[id] - Get product by ID
+  * filter[category] - Filter by category or price
+  * sort - Sort by price
+  * page[number] - Page number
+  * page[size] - Items in a given page
+
+Request:
+  GET /products
+  Accept: application/vnd.api+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 755
+  Content-Type: application/vnd.api+json
+  ETag: W/"e7ffa1f4da9889962768ba860e27ce6a"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: a62e7f6c-5574-43a4-8454-4b2561da241e
+  X-Runtime: 0.047771
+  X-XSS-Protection: 1; mode=block
+
+  {"data":[{"id":"1","type":"products","links":{"self":"http://example.org/products/1"},"attributes":{"name":"water","sold-out":null,"category":"water","under-sale":null,"price":200,"sale-price":null}},{"id":"2","type":"products","links":{"self":"http://example.org/products/2"},"attributes":{"name":"orange juice","sold-out":null,"category":"juice","under-sale":null,"price":100,"sale-price":null}},{"id":"3","type":"products","links":{"self":"http://example.org/products/3"},"attributes":{"name":"grape juice","sold-out":null,"category":"juice","under-sale":null,"price":300,"sale-price":null}}],"links":{"first":"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=10","last":"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=10"}}
+
+Request:
+  GET /products?filter%5Bid%5D=1
+  Accept: application/vnd.api+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  filter={"id"=>"1"}
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 394
+  Content-Type: application/vnd.api+json
+  ETag: W/"019d3774006d8b43b73a1b841bad84e6"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 87ac9cfa-e112-401c-9d59-c210ca4cfc44
+  X-Runtime: 0.016653
+  X-XSS-Protection: 1; mode=block
+
+  {"data":[{"id":"1","type":"products","links":{"self":"http://example.org/products/1"},"attributes":{"name":"water","sold-out":null,"category":"water","under-sale":null,"price":200,"sale-price":null}}],"links":{"first":"http://example.org/products?filter%5Bid%5D=1&page%5Bnumber%5D=1&page%5Bsize%5D=10","last":"http://example.org/products?filter%5Bid%5D=1&page%5Bnumber%5D=1&page%5Bsize%5D=10"}}
+
+
+Getting a list of products
+--------------------------
+
+Parameters:
+  * filter[id] - Get product by ID
+  * filter[category] - Filter by category or price
+  * sort - Sort by price
+  * page[number] - Page number
+  * page[size] - Items in a given page
+
+Request:
+  GET /products
+  Accept: application/vnd.api+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 755
+  Content-Type: application/vnd.api+json
+  ETag: W/"e7ffa1f4da9889962768ba860e27ce6a"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: a52215d2-ab27-48e9-83b5-1e958a5b17a5
+  X-Runtime: 0.007057
+  X-XSS-Protection: 1; mode=block
+
+  {"data":[{"id":"1","type":"products","links":{"self":"http://example.org/products/1"},"attributes":{"name":"water","sold-out":null,"category":"water","under-sale":null,"price":200,"sale-price":null}},{"id":"2","type":"products","links":{"self":"http://example.org/products/2"},"attributes":{"name":"orange juice","sold-out":null,"category":"juice","under-sale":null,"price":100,"sale-price":null}},{"id":"3","type":"products","links":{"self":"http://example.org/products/3"},"attributes":{"name":"grape juice","sold-out":null,"category":"juice","under-sale":null,"price":300,"sale-price":null}}],"links":{"first":"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=10","last":"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=10"}}
+
+Request:
+  GET /products
+  Accept: application/vnd.api+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 755
+  Content-Type: application/vnd.api+json
+  ETag: W/"e7ffa1f4da9889962768ba860e27ce6a"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 26301723-16d5-4fb1-a7a6-e420f9af89fb
+  X-Runtime: 0.005114
+  X-XSS-Protection: 1; mode=block
+
+  {"data":[{"id":"1","type":"products","links":{"self":"http://example.org/products/1"},"attributes":{"name":"water","sold-out":null,"category":"water","under-sale":null,"price":200,"sale-price":null}},{"id":"2","type":"products","links":{"self":"http://example.org/products/2"},"attributes":{"name":"orange juice","sold-out":null,"category":"juice","under-sale":null,"price":100,"sale-price":null}},{"id":"3","type":"products","links":{"self":"http://example.org/products/3"},"attributes":{"name":"grape juice","sold-out":null,"category":"juice","under-sale":null,"price":300,"sale-price":null}}],"links":{"first":"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=10","last":"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=10"}}
+
+
+Paginate products
+-----------------
+
+Parameters:
+  * filter[id] - Get product by ID
+  * filter[category] - Filter by category or price
+  * sort - Sort by price
+  * page[number] - Page number
+  * page[size] - Items in a given page
+
+Request:
+  GET /products
+  Accept: application/vnd.api+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 755
+  Content-Type: application/vnd.api+json
+  ETag: W/"e7ffa1f4da9889962768ba860e27ce6a"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: c8eed7e5-6372-43a3-bd33-a40d8a4b90f7
+  X-Runtime: 0.008860
+  X-XSS-Protection: 1; mode=block
+
+  {"data":[{"id":"1","type":"products","links":{"self":"http://example.org/products/1"},"attributes":{"name":"water","sold-out":null,"category":"water","under-sale":null,"price":200,"sale-price":null}},{"id":"2","type":"products","links":{"self":"http://example.org/products/2"},"attributes":{"name":"orange juice","sold-out":null,"category":"juice","under-sale":null,"price":100,"sale-price":null}},{"id":"3","type":"products","links":{"self":"http://example.org/products/3"},"attributes":{"name":"grape juice","sold-out":null,"category":"juice","under-sale":null,"price":300,"sale-price":null}}],"links":{"first":"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=10","last":"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=10"}}
+
+Request:
+  GET /products?page%5Bnumber%5D=2&page%5Bsize%5D=1
+  Accept: application/vnd.api+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  page={"number"=>"2", "size"=>"1"}
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 511
+  Content-Type: application/vnd.api+json
+  ETag: W/"681e5bde27bedd6705eb6f2886324624"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 20d2592b-77c4-47d2-a408-c346e17ed1a7
+  X-Runtime: 0.005838
+  X-XSS-Protection: 1; mode=block
+
+  {"data":[{"id":"2","type":"products","links":{"self":"http://example.org/products/2"},"attributes":{"name":"orange juice","sold-out":null,"category":"juice","under-sale":null,"price":100,"sale-price":null}}],"links":{"first":"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=1","prev":"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=1","next":"http://example.org/products?page%5Bnumber%5D=3&page%5Bsize%5D=1","last":"http://example.org/products?page%5Bnumber%5D=3&page%5Bsize%5D=1"}}
+
+
+Filter by category and sort price in descending order
+-----------------------------------------------------
+
+Parameters:
+  * filter[id] - Get product by ID
+  * filter[category] - Filter by category or price
+  * sort - Sort by price
+  * page[number] - Page number
+  * page[size] - Items in a given page
+
+Request:
+  GET /products
+  Accept: application/vnd.api+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 755
+  Content-Type: application/vnd.api+json
+  ETag: W/"e7ffa1f4da9889962768ba860e27ce6a"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 667fa7ef-be50-4191-9fed-74fcd99a6158
+  X-Runtime: 0.010975
+  X-XSS-Protection: 1; mode=block
+
+  {"data":[{"id":"1","type":"products","links":{"self":"http://example.org/products/1"},"attributes":{"name":"water","sold-out":null,"category":"water","under-sale":null,"price":200,"sale-price":null}},{"id":"2","type":"products","links":{"self":"http://example.org/products/2"},"attributes":{"name":"orange juice","sold-out":null,"category":"juice","under-sale":null,"price":100,"sale-price":null}},{"id":"3","type":"products","links":{"self":"http://example.org/products/3"},"attributes":{"name":"grape juice","sold-out":null,"category":"juice","under-sale":null,"price":300,"sale-price":null}}],"links":{"first":"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=10","last":"http://example.org/products?page%5Bnumber%5D=1&page%5Bsize%5D=10"}}
+
+Request:
+  GET /products?filter%5Bcategory%5D=juice&sort=-price
+  Accept: application/vnd.api+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  filter={"category"=>"juice"}
+  sort=-price
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 642
+  Content-Type: application/vnd.api+json
+  ETag: W/"2426f2ad2a9a16e3b38dd7570ce36181"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 567c5109-296e-4f33-9e1b-ac7687a89b0e
+  X-Runtime: 0.006246
+  X-XSS-Protection: 1; mode=block
+
+  {"data":[{"id":"3","type":"products","links":{"self":"http://example.org/products/3"},"attributes":{"name":"grape juice","sold-out":null,"category":"juice","under-sale":null,"price":300,"sale-price":null}},{"id":"2","type":"products","links":{"self":"http://example.org/products/2"},"attributes":{"name":"orange juice","sold-out":null,"category":"juice","under-sale":null,"price":100,"sale-price":null}}],"links":{"first":"http://example.org/products?filter%5Bcategory%5D=juice&page%5Bnumber%5D=1&page%5Bsize%5D=10&sort=-price","last":"http://example.org/products?filter%5Bcategory%5D=juice&page%5Bnumber%5D=1&page%5Bsize%5D=10&sort=-price"}}
